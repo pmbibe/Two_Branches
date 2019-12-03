@@ -3,7 +3,7 @@ pipeline {
         stages{
             stage('Hello') {
                 steps {
-                    checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanCheckout']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'pmbibe', url: 'https://github.com/pmbibe/Two_Branches']]])
+                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'pmbibe', url: 'https://github.com/pmbibe/Two_Branches']]])
                 }
             }
             stage('Deliver for development') {
