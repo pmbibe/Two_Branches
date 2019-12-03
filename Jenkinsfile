@@ -1,9 +1,6 @@
 pipeline {
     agent any
         stages{
-            stage('Hello') {
-                checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanCheckout']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'pmbibe', url: 'https://github.com/pmbibe/Two_Branches']]])
-            }
             stage('Deliver for development') {
                 when {
                     branch 'master'
