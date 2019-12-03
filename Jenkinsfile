@@ -1,12 +1,13 @@
 pipeline {
   agent any
-    stages {
-      stage('Prepare') {
-        steps {
-          echo "--------------------Prepare Stage---------------------"
-          echo "${BRANCH_NAME}"
+  if (${BRANCH_NAME} == "master"){
+      stages {
+        stage('Prepare') {
+          steps {
+            echo "--------------------Prepare Stage---------------------"
+            echo "${BRANCH_NAME}
+          }
         }
       }
-    }
   }
-
+}
