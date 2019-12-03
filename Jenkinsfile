@@ -5,7 +5,7 @@ pipeline {
         stage('Prepare') {
           steps {
             echo "--------------------Prepare Stage---------------------"
-            echo "${BRANCH_NAME}
+            echo "${BRANCH_NAME}"
           }
         }
       }
