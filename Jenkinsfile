@@ -3,7 +3,7 @@ pipeline {
         stages{
             stage('Deliver for development') {
                 when {
-                    branch 'development'
+                    branch 'master'
                 }
                 steps {
                     echo "${BRANCH_NAME}"
@@ -12,7 +12,7 @@ pipeline {
          }
          stage('Deploy for production') {
              when {
-                 branch 'production'
+                 branch 'slave'
              }
              steps {
                  echo "${BRANCH_NAME}"
