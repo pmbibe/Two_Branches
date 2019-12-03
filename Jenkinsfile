@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  if (params.BRANCH == "master"){
+  if (params.BRANCH_NAME == "master"){
     stages {
       stage('Prepare') {
         steps {
